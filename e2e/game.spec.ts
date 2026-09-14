@@ -119,7 +119,7 @@ test('rechaza una acción fuera del tablero', async ({ page }) => {
 test('el Pulso consume energía y envía JSON al backend real', async ({ page }) => {
   const game = await startGame(page)
   expect(game.status).toBe('playing')
-  expect(game.player1.energy).toBe(90)
+  expect(game.player1.energy).toBe(100)
 
   const requestPromise = page.waitForRequest((request) => request.url().includes('/api/game/action') && request.method() === 'POST')
   const responsePromise = page.waitForResponse((response) => response.url().includes('/api/game/action') && response.request().method() === 'POST')
@@ -132,7 +132,7 @@ test('el Pulso consume energía y envía JSON al backend real', async ({ page })
   expect(request.postDataJSON()).toEqual({ player: 1, action: 'pulse', direction: undefined })
   expect(response.status()).toBe(200)
   expect(result.success).toBe(true)
-  expect(result.game.player1.energy).toBe(60)
+  expect(result.game.player1.energy).toBe(70)
   await expect(page.locator('.player-card-1').locator('.stat-line').filter({ hasText: 'Energía' }).locator('strong')).toHaveText('60')
 })
 

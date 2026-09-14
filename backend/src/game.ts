@@ -59,8 +59,8 @@ export function createGame(): GameState {
   game = {
     status: 'playing',
     time: START_TIME,
-    player1: { x: 1, y: 1, life: 3, energy: 90, score: 0 },
-    player2: { x: 10, y: 6, life: 3, energy: 90, score: 0 },
+    player1: { x: 1, y: 1, life: 3, energy: 100, score: 0 },
+    player2: { x: 10, y: 6, life: 3, energy: 100, score: 0 },
     crystals: layout.crystals,
     obstacles: layout.obstacles,
     winner: null
