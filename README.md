@@ -52,6 +52,6 @@ Playwright instala Chromium con `npx playwright install chromium`.
 
 ## Deployment
 
-La configuración de Render está en `render.yaml`. El servicio debe ejecutar `npm ci && npm run build` y `npm run start --workspace backend`. No hay URL de producción hasta conectar el repositorio con una cuenta de deployment.
+La configuración de Render está en `render.yaml`. El servicio ejecuta `npm ci && npm run build` y `npm run start --workspace backend`. La aplicación está publicada en https://crystalrush.onrender.com.
 
 La documentación ampliada está en `docs/`.
