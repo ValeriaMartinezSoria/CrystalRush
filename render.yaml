@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: crystal-rush
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start --workspace backend
+    envVars:
+      - key: NODE_VERSION
+        value: 22
