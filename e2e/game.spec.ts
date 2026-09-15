@@ -133,7 +133,7 @@ test('el Pulso consume energía y envía JSON al backend real', async ({ page })
   expect(response.status()).toBe(200)
   expect(result.success).toBe(true)
   expect(result.game.player1.energy).toBe(70)
-  await expect(page.locator('.player-card-1').locator('.stat-line').filter({ hasText: 'Energía' }).locator('strong')).toHaveText('60')
+  await expect(page.locator('.player-card-1').locator('.stat-line').filter({ hasText: 'Energía' }).locator('strong')).toHaveText('70')
 })
 
 test('recoger un cristal actualiza la puntuación mostrada', async ({ page }) => {
