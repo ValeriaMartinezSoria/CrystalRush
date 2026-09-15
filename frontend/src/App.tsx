@@ -78,7 +78,7 @@ function App() {
 
   const winnerText = game.winner === 'draw' ? 'Empate' : `Jugador ${game.winner}`
   return <main className="game-screen">
-    <header className="game-header"><div><p className="eyebrow">Crystal Rush · arena local</p><h1>La carrera por los cristales</h1></div><div className={`time-box ${game.time < 15 ? 'urgent' : ''}`}><span>Tiempo</span><strong>{String(Math.floor(game.time / 60)).padStart(2, '0')}:{String(game.time % 60).padStart(2, '0')}</strong></div></header>
+    <header className="game-header"><div><p className="eyebrow">Crystal Rush · arena local</p><h1>Comer cristales</h1></div><div className={`time-box ${game.time < 15 ? 'urgent' : ''}`}><span>Tiempo</span><strong>{String(Math.floor(game.time / 60)).padStart(2, '0')}:{String(game.time % 60).padStart(2, '0')}</strong></div></header>
     <Scoreboard game={game} />
     <section className="arena-layout"><div className="board-wrap"><GameBoard game={game} /><div className="legend"><span><i className="legend-crystal" /> Cristal +10</span><span><i className="legend-obstacle" /> Obstáculo</span></div></div>
       <aside className="control-panel"><div className="status-label"><span className={game.status === 'playing' ? 'live-dot' : ''} />{game.status === 'playing' ? 'Partida en curso' : 'Partida finalizada'}</div><div className="panel-time"><span>Tiempo restante</span><strong>{String(Math.floor(game.time / 60)).padStart(2, '0')}:{String(game.time % 60).padStart(2, '0')}</strong></div><p className={error ? 'action-message invalid' : 'action-message'}>{error || message}</p>
